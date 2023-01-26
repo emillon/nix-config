@@ -103,15 +103,25 @@
               };
             };
     in {
-      homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+      homeConfigurations = {
+        "${username}@delpech" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
 
-        modules = [
-          common
-          dev
-          x11
-          ./delpech.nix
-        ];
+          modules = [
+            common
+            dev
+            x11
+            ./delpech.nix
+          ];
+        };
+        ${username} = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+
+          modules = [
+            common
+            dev
+          ];
+        };
       };
     };
 }
