@@ -33,6 +33,7 @@
           programs.neovim = {
             enable = true;
             vimAlias = true;
+            viAlias = true;
             plugins =
               with pkgs.vimPlugins;
               [
@@ -57,10 +58,10 @@
                 map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
                 map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
                 map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
-                let s:merlindir = trim(system('opam var share')) . "/merlin/vim"
-                if isdirectory(s:merlindir)
-                execute "set rtp+=" . s:merlindir
-                execute "helptags " . s:merlindir . "/doc"
+                let g:merlindir = trim(system('opam var share')) . "/merlin/vim"
+                if isdirectory(g:merlindir)
+                execute "set rtp+=" . g:merlindir
+                execute "helptags " . g:merlindir . "/doc"
                 endif
                 noremap <silent> <C-p> :GFiles<CR>
                 let g:syntastic_ocaml_checkers = ['merlin']
