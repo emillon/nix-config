@@ -104,6 +104,13 @@
                 enableContribAndExtras = true;
               };
             };
+          media = {
+            home.packages =
+              with pkgs;
+              [
+                yt-dlp
+              ];
+          };
     in {
       homeConfigurations = {
         "${username}@delpech" = home-manager.lib.homeManagerConfiguration {
@@ -112,6 +119,7 @@
           modules = [
             common
             dev
+            media
             x11
             ./delpech.nix
           ];
