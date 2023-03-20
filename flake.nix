@@ -88,6 +88,8 @@
                 init.defaultBranch = "main";
               };
             };
+
+            programs.tmux.enable = true;
           };
           x11 = {
             home.packages =
