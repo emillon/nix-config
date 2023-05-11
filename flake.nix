@@ -28,6 +28,7 @@
           [
             gh
             opam
+            nixfmt
           ];
 
           programs.neovim = {
