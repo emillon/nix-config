@@ -64,4 +64,29 @@
       };
     };
   };
+  services.kanshi.profiles = let
+    disabled = criteria: {
+      criteria = criteria;
+      status = "disable";
+    };
+  in let
+    enabled = criteria: {
+      criteria = criteria;
+      status = "enable";
+    };
+  in let laptop_screen = "Unknown 0xD291 0x00000000";
+  in {
+    laptop = { outputs = [ (disabled laptop_screen) ]; };
+    home = {
+      outputs = [
+        (disabled laptop_screen)
+        (enabled "Dell Inc. DELL P2417H CJFH27C7217B")
+      ];
+    };
+    office = {
+      outputs =
+        [ (disabled laptop_screen) (enabled "Unknown Q27P1B GNXK5HA066101") ];
+    };
+  };
+  home.sessionVariables.WLR_NO_HARDWARE_CURSORS = 1;
 }
