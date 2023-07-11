@@ -15,4 +15,4 @@ jobs:
       - name: Update flake.lock
         uses: DeterminateSystems/update-flake-lock@v19
       - name: Build HM environment
-        run: nix run .#homeConfigurations.etienne@delpech.activationPackage
+        run: nix run home-manager/release-23.05 -- --build .
