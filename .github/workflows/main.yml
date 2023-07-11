@@ -16,4 +16,4 @@ jobs:
         uses: DeterminateSystems/update-flake-lock@v19
       - run: mkdir -p ~/.local/state/nix/profiles
       - name: Build HM environment
-        run: nix run home-manager/release-23.05 -- build --flake .
+        run: nix run home-manager/release-23.05 -- build --flake .#etienne
