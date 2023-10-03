@@ -73,8 +73,8 @@
           userName = "Etienne Millon";
           extraConfig = {
             url = {
-              "git@github.com".pushInsteadOf = "https://github.com/";
-              "git@gist.github.com".pushInsteadOf = "https://gist.github.com/";
+              "git@github.com:".pushInsteadOf = "https://github.com/";
+              "git@gist.github.com:".pushInsteadOf = "https://gist.github.com/";
             };
             merge.conflictstyle = "diff3";
             commit.verbose = true;
