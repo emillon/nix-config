@@ -5,15 +5,20 @@
       url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    okra-repo = {
+      url = "github:MagnusS/okra";
+      flake = false;
+    };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, okra-repo, ... }:
     let
       system = "x86_64-linux";
       username = "etienne";
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
+        overlays = [ (import ./overlay.nix { inherit okra-repo; }) ];
       };
       common = {
         home.stateVersion = "22.11";
@@ -25,12 +30,13 @@
       x11 = import ./x11.nix { inherit pkgs; };
       wayland = import ./wayland.nix { inherit pkgs; };
       media = { home.packages = with pkgs; [ yt-dlp ]; };
+      work = { home.packages = [ pkgs.ocamlPackages.okra.okra-bin ]; };
     in {
       homeConfigurations = {
         "${username}@delpech" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
 
-          modules = [ common dev media x11 wayland ./delpech.nix ];
+          modules = [ common dev media x11 wayland ./delpech.nix work ];
         };
         ${username} = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
