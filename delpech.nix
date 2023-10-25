@@ -74,7 +74,7 @@
       criteria = criteria;
       status = "enable";
     };
-  in let laptop_screen = "Unknown 0xD291 0x00000000";
+  in let laptop_screen = "AU Optronics 0xD291 Unknown";
   in {
     laptop = { outputs = [ (disabled laptop_screen) ]; };
     home = {
@@ -85,7 +85,7 @@
     };
     office = {
       outputs =
-        [ (disabled laptop_screen) (enabled "Unknown Q27P1B GNXK5HA066101") ];
+        [ (disabled laptop_screen) (enabled "AOC Q27P1B GNXK5HA066101") ];
     };
   };
   home.sessionVariables.WLR_NO_HARDWARE_CURSORS = 1;
