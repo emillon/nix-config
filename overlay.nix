@@ -11,4 +11,5 @@ in {
       okra-repo = okra-repo;
     };
   };
+  opam = import ./opam.nix { inherit pkgs; };
 }
