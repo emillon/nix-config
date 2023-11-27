@@ -23,11 +23,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1700403855,
-        "narHash": "sha256-Q0Uzjik9kUTN9pd/kp52XJi5kletBhy29ctBlAG+III=",
+        "lastModified": 1700989516,
+        "narHash": "sha256-oKbmPa2wpTHh9XB3+zIx97uMZGNnp97GPliKKG2/plo=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "0c5678df521e1407884205fe3ce3cf1d7df297db",
+        "rev": "d2e4de209881b38392933fabf303cde3454b0b4c",
         "type": "github"
       },
       "original": {
@@ -40,11 +40,11 @@
     "okra-repo": {
       "flake": false,
       "locked": {
-        "lastModified": 1700025790,
-        "narHash": "sha256-gOPGCIQ/5DR1+qoi4dLdZIU7Q4Jt2sJSoSk4klwnrFg=",
+        "lastModified": 1700473341,
+        "narHash": "sha256-e3eeG4OJ9zczrdoGKDVhIKm9A5oV6m79aCxXlW9PFZk=",
         "owner": "MagnusS",
         "repo": "okra",
-        "rev": "c3fa4f15015cb16187658013d9861d6d180ad5bc",
+        "rev": "513e27d027bddc7dc50eccad95af2ca7429b2129",
         "type": "github"
       },
       "original": {
