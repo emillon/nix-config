@@ -40,11 +40,11 @@
     "okra-repo": {
       "flake": false,
       "locked": {
-        "lastModified": 1700473341,
-        "narHash": "sha256-e3eeG4OJ9zczrdoGKDVhIKm9A5oV6m79aCxXlW9PFZk=",
+        "lastModified": 1708616495,
+        "narHash": "sha256-gMLAIAckEZPrPLuUcLMA9ijkqI/aNiZC4acnvkf811E=",
         "owner": "MagnusS",
         "repo": "okra",
-        "rev": "513e27d027bddc7dc50eccad95af2ca7429b2129",
+        "rev": "6a0291a615fe99f00318b31edb5cac71953a3827",
         "type": "github"
       },
       "original": {
