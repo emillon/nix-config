@@ -5,20 +5,16 @@
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    okra-repo = {
-      url = "github:MagnusS/okra";
-      flake = false;
-    };
   };
 
-  outputs = { nixpkgs, home-manager, okra-repo, ... }:
+  outputs = { nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       username = "etienne";
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [ (import ./overlay.nix { inherit okra-repo; }) ];
+        overlays = [ (import ./overlay.nix) ];
       };
       common = {
         home.stateVersion = "22.11";

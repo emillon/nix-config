@@ -37,27 +37,10 @@
         "type": "github"
       }
     },
-    "okra-repo": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1708616495,
-        "narHash": "sha256-gMLAIAckEZPrPLuUcLMA9ijkqI/aNiZC4acnvkf811E=",
-        "owner": "MagnusS",
-        "repo": "okra",
-        "rev": "6a0291a615fe99f00318b31edb5cac71953a3827",
-        "type": "github"
-      },
-      "original": {
-        "owner": "MagnusS",
-        "repo": "okra",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs",
-        "okra-repo": "okra-repo"
+        "nixpkgs": "nixpkgs"
       }
     }
   },

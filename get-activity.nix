@@ -1,18 +1,18 @@
 { pkgs }:
-pkgs.ocamlPackages.buildDunePackage {
-  pname = "get-activity";
-  version = "n/a";
+let version = "0.2.0";
+in pkgs.ocamlPackages.buildDunePackage {
+  pname = "get-activity-lib";
+  version = version;
   duneVersion = "3";
   src = pkgs.fetchFromGitHub {
-    owner = "patricoferris";
+    owner = "tarides";
     repo = "get-activity";
-    rev = "a384724b4630031e07c2f2962f44bf76378685d8";
-    hash = "sha256-oRzBdgS7aNrlT+9OQ3Jv/uYPmBTAgRwJr1E3hpgtdoY=";
+    rev = version;
+    hash = "sha256-U1eD9jYUUhUQG+nt4GZi2IwpPPSj0SUu5F/s3tYrbQU=";
   };
   propagatedBuildInputs = with pkgs.ocamlPackages; [
-    astring
     cohttp-lwt
-    fmt
+    cohttp-lwt-unix
     yojson
   ];
 }
