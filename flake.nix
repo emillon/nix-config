@@ -15,7 +15,10 @@
         common = {
           home.stateVersion = "22.11";
           home.username = "etienne";
-          home.homeDirectory = "/home/etienne";
+          home.homeDirectory = if system == "aarch64-darwin" then
+            "/Users/etienne"
+          else
+            "/home/etienne";
           programs.home-manager.enable = true;
         };
         dev = import ./dev.nix { inherit pkgs; };
