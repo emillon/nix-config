@@ -27,10 +27,10 @@
       map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
       map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
       map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
-      let g:merlindir = trim(system('opam var share')) . "/merlin/vim"
+      let g:merlindir = trim(system('dirname $(command -v ocamlmerlin)')) . "/../share/merlin/vim"
       if isdirectory(g:merlindir)
       execute "set rtp+=" . g:merlindir
-      execute "helptags " . g:merlindir . "/doc"
+      "execute "helptags " . g:merlindir . "/doc"
       endif
       noremap <silent> <C-p> :GFiles<CR>
       let g:syntastic_ocaml_checkers = ['merlin']
