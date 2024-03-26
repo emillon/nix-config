@@ -42,6 +42,9 @@
       set smartcase
       nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
     '';
+    extraLuaConfig = ''
+      require'lspconfig'.ocamllsp.setup{}
+    '';
   };
 
   programs.git = {
