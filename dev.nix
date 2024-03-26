@@ -6,7 +6,6 @@
     vimAlias = true;
     viAlias = true;
     plugins = with pkgs.vimPlugins; [
-      fzf-vim
       molokai
       vim-nix
       fugitive
@@ -15,11 +14,12 @@
       nvim-lspconfig
       nerdcommenter
       syntastic
+      telescope-nvim
     ];
     extraConfig = ''
       let mapleader=","
       let maplocalleader=","
-      nnoremap <silent> <C-p> :GFiles<CR>
+      nnoremap <silent> <C-p> <cmd>Telescope git_files<cr>
       nmap <LocalLeader>f :Neoformat<cr>
       colorscheme molokai
       inoremap jk <esc>
@@ -32,7 +32,6 @@
       execute "set rtp+=" . g:merlindir
       "execute "helptags " . g:merlindir . "/doc"
       endif
-      noremap <silent> <C-p> :GFiles<CR>
       let g:syntastic_ocaml_checkers = ['merlin']
       let g:syntastic_always_populate_loc_list = 1
       let g:syntastic_check_on_open = 1
