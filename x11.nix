@@ -1,5 +1,5 @@
 { pkgs }: {
-  home.packages = with pkgs; [ google-chrome dmenu ];
+  home.packages = with pkgs; [ google-chrome dmenu alacritty ];
   home.keyboard.options = [ "compose:rctrl" ];
   home.sessionVariables.BROWSER = "google-chrome-stable";
   xsession.enable = true;

@@ -6,9 +6,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-utils.url = "github:numtide/flake-utils";
+    nixgl = {
+      url = "github:nix-community/nixGL";
+      inputs = {
+        flake-utils.follows = "flake-utils";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
   };
 
-  outputs = { nixpkgs, home-manager, flake-utils, ... }:
+  outputs = { nixpkgs, home-manager, flake-utils, nixgl, ... }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         username = "etienne";
@@ -29,7 +36,8 @@
         pkgs = import nixpkgs {
           inherit system;
           config.allowUnfree = true;
-          overlays = [ (import ./overlay.nix) ];
+          overlays =
+            [ (import ./overlay.nix) nixgl.overlay (import ./nixglize.nix) ];
         };
       in {
         packages = {
