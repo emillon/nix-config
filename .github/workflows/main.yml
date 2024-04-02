@@ -7,9 +7,15 @@ on:
 
 jobs:
   build:
-    runs-on:
-      - ubuntu-latest
-      - macos-latest
+    strategy:
+      matrix:
+        - os: ubuntu-latest
+          target: etienne
+        - os: macos-latest
+          target: etienne
+        - os: ubuntu-latest
+          target: etienne@delpech
+    runs-on: ${{ matrix.setup.os }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -17,4 +23,4 @@ jobs:
         uses: DeterminateSystems/nix-installer-action@v1
       - run: mkdir -p ~/.local/state/nix/profiles
       - name: Build HM environment
-        run: nix run home-manager/release-23.05 -- build --flake .#etienne
+        run: nix run home-manager/release-23.05 -- build --flake .#${{ matrix.setup.target }}
