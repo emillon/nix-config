@@ -9,12 +9,13 @@ jobs:
   build:
     strategy:
       matrix:
-        - os: ubuntu-latest
-          target: etienne
-        - os: macos-latest
-          target: etienne
-        - os: ubuntu-latest
-          target: etienne@delpech
+        setup:
+          - os: ubuntu-latest
+            target: etienne
+          - os: macos-latest
+            target: etienne
+          - os: ubuntu-latest
+            target: etienne@delpech
     runs-on: ${{ matrix.setup.os }}
     steps:
       - name: Checkout repository
