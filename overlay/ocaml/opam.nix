@@ -8,7 +8,7 @@ pkgs.opam.overrideAttrs (old: {
   };
   patches = [ ];
   configureFlags = [ "--with-vendored-deps" ];
-  postConfigure = if pkgs.system == "aarch64-darwin" then
+  postConfigure = if pkgs.stdenv.isDarwin then
     "echo '( -noautolink -cclib -lunix -cclib -lmccs_stubs -cclib -lmccs_glpk_stubs -cclib -lsha_stubs -cclib -lc++ -ccopt -lc++abi )' > src/client/linking.sexp"
   else
     [ ];

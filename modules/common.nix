@@ -1,7 +1,7 @@
-{ system }: {
+{ pkgs }: {
   home.stateVersion = "22.11";
   home.username = "etienne";
   home.homeDirectory =
-    if system == "aarch64-darwin" then "/Users/etienne" else "/home/etienne";
+    if pkgs.stdenv.isDarwin then "/Users/etienne" else "/home/etienne";
   programs.home-manager.enable = true;
 }

@@ -1,7 +1,7 @@
 { home-manager, nixgl, nixpkgs, system }:
 let
   username = "etienne";
-  common = import ./modules/common.nix { inherit system; };
+  common = import ./modules/common.nix { inherit pkgs; };
   dev = import ./modules/dev.nix { inherit pkgs; };
   x11 = import ./modules/x11.nix { inherit pkgs; };
   wayland = import ./modules/wayland.nix { inherit pkgs; };
