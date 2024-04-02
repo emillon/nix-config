@@ -24,7 +24,7 @@ in {
       "${username}@delpech" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
-        modules = [ common dev media x11 wayland ./delpech.nix work ];
+        modules = [ common dev media x11 wayland ./machines/delpech.nix work ];
       };
       ${username} = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
