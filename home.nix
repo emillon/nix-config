@@ -10,8 +10,7 @@ let
   pkgs = import nixpkgs {
     inherit system;
     config.allowUnfree = true;
-    overlays =
-      [ (import ./overlay) nixgl.overlay (import ./overlay/nixglize.nix) ];
+    overlays = [ (import ./overlay) nixgl.overlay ];
   };
   config = modules:
     home-manager.lib.homeManagerConfiguration { inherit modules pkgs; };
