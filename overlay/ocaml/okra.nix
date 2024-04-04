@@ -1,6 +1,6 @@
 { pkgs }:
 let
-  version = "0.3.0";
+  version = "0.4.0";
   okra-lib = pkgs.ocamlPackages.buildDunePackage {
     pname = "okra-lib";
     version = version;
@@ -8,7 +8,7 @@ let
       owner = "tarides";
       repo = "okra";
       rev = version;
-      hash = "sha256-TUKjDPeO640a+2OPo4v04OYf5bI35UtmYzMR4hIY/R4=";
+      hash = "sha256-SvXW50ubt6Rw/23yLtakroAw31mc/awhrv3pupIYTaU=";
     };
     duneVersion = "3";
     propagatedBuildInputs = with pkgs.ocamlPackages; [

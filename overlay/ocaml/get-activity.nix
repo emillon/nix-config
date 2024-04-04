@@ -1,5 +1,5 @@
 { pkgs }:
-let version = "1.0.1";
+let version = "2.0.0";
 in pkgs.ocamlPackages.buildDunePackage {
   pname = "get-activity-lib";
   version = version;
@@ -8,12 +8,13 @@ in pkgs.ocamlPackages.buildDunePackage {
     owner = "tarides";
     repo = "get-activity";
     rev = version;
-    hash = "sha256-H2LE3ccxfb0f/JH08Ra3+yQTNzSa0EIWllkJ6je913U=";
+    hash = "sha256-LrO2+X4hHFhleFomuKl9lBkAGadtlQPT7ANLk6ZrNro=";
   };
   propagatedBuildInputs = with pkgs.ocamlPackages; [
     astring
     curly
     fmt
+    logs
     ppx_yojson_conv
   ];
 }
