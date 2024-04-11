@@ -1,10 +1,10 @@
 { pkgs }:
 pkgs.opam.overrideAttrs (old: {
-  version = "2.2.0~beta1";
+  version = "2.2.0~beta2";
   src = pkgs.fetchurl {
     url =
-      "https://github.com/ocaml/opam/releases/download/2.2.0-beta1/opam-full-2.2.0-beta1.tar.gz";
-    sha256 = "wEMV2bSxXalNkZWGkENLwba1qTjWw0fhK7LCaCDdvOk=";
+      "https://github.com/ocaml/opam/releases/download/2.2.0-beta2/opam-full-2.2.0-beta2.tar.gz";
+    sha256 = "RtVAAy70kKm+G7PmasUgY7LXAsV/d/HVn7dOosnMiZo=";
   };
   patches = [ ];
   configureFlags = [ "--with-vendored-deps" ];
