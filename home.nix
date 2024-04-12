@@ -6,7 +6,10 @@ let
   x11 = import ./modules/x11.nix { inherit pkgs; };
   wayland = import ./modules/wayland.nix { inherit pkgs; };
   media = { home.packages = with pkgs; [ yt-dlp ]; };
-  work = { home.packages = [ pkgs.ocamlPackages.okra.okra-bin ]; };
+  work = {
+    home.packages = [ pkgs.ocamlPackages.okra.okra-bin ];
+    programs.neovim.plugins = [ pkgs.ocamlPackages.okra.okra-vim ];
+  };
   pkgs = import nixpkgs {
     inherit system;
     config.allowUnfree = true;
