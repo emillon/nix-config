@@ -43,7 +43,9 @@
       nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
     '';
     extraLuaConfig = ''
-      require'lspconfig'.ocamllsp.setup{}
+      if vim.fn.executable('ocamllsp') == 1 then
+        require'lspconfig'.ocamllsp.setup{}
+      end
     '';
   };
 
