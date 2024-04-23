@@ -40,6 +40,7 @@
       set expandtab
       set ignorecase
       set smartcase
+      set signcolumn=yes:1
       nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
     '';
     extraLuaConfig = ''
