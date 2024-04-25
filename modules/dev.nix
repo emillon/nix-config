@@ -1,5 +1,11 @@
 { pkgs }: {
-  home.packages = with pkgs; [ gh opam nixfmt ];
+  home.packages = with pkgs; [ gh nixfmt ];
+
+  programs.opam = {
+    enable = true;
+    enableBashIntegration = false;
+    enableZshIntegration = false;
+  };
 
   programs.neovim = {
     enable = true;
@@ -99,9 +105,6 @@
         cd "$1"
       }
       alias -s -- pdf=zathura
-      if [ -d ~/.opam ] ; then
-        . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-      fi
       zstyle ':completion:*' auto-description 'specify: %d'
       zstyle ':completion:*' completer _expand _complete _correct _approximate
       zstyle ':completion:*' format 'Completing %d'
@@ -140,5 +143,10 @@
       PROMPT='%F{$promptcolor} %~$vcs_info_msg_0_ %# %f'
       RPROMPT=""
     '';
+  };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
   };
 }
