@@ -27,5 +27,9 @@
             (import ./overlay/nixglize.nix)
           ];
         };
-      in (import ./home.nix) { inherit home-manager pkgs; });
+      in (import ./home.nix) { inherit home-manager pkgs; } // {
+        devShells.okra = pkgs.mkShell {
+          nativeBuildInputs = [ pkgs.ocamlPackages.okra.okra-bin ];
+        };
+      });
 }
