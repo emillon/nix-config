@@ -17,5 +17,15 @@
 
   outputs = { flake-utils, home-manager, nixgl, nixpkgs, ... }:
     flake-utils.lib.eachDefaultSystem (system:
-      (import ./home.nix) { inherit home-manager nixgl nixpkgs system; });
+      let
+        pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+          overlays = [
+            (import ./overlay)
+            nixgl.overlay
+            (import ./overlay/nixglize.nix)
+          ];
+        };
+      in (import ./home.nix) { inherit home-manager pkgs; });
 }

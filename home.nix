@@ -1,4 +1,4 @@
-{ home-manager, nixgl, nixpkgs, system }:
+{ home-manager, pkgs }:
 let
   username = "etienne";
   common = import ./modules/common.nix { inherit pkgs; };
@@ -9,12 +9,6 @@ let
   work = {
     home.packages = [ pkgs.ocamlPackages.okra.okra-bin ];
     programs.neovim.plugins = [ pkgs.ocamlPackages.okra.okra-vim ];
-  };
-  pkgs = import nixpkgs {
-    inherit system;
-    config.allowUnfree = true;
-    overlays =
-      [ (import ./overlay) nixgl.overlay (import ./overlay/nixglize.nix) ];
   };
   config = modules:
     home-manager.lib.homeManagerConfiguration { inherit modules pkgs; };
