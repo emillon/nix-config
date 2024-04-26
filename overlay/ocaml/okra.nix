@@ -20,7 +20,20 @@ let
       omd
     ];
   };
+  okra-vim-env = "OKRA_VIM";
 in {
+  inherit okra-vim-env;
+  okra-vim-conf = ''
+    if vim.env.${okra-vim-env} ~= nil then
+      vim.api.nvim_create_autocmd(
+        {"BufRead", "BufNewFile"},
+        { pattern = {"*.md"},
+          callback = function ()
+            vim.g.syntastic_markdown_checkers = {"okra"}
+          end
+        })
+    end
+  '';
   okra-bin = pkgs.ocamlPackages.buildDunePackage {
     meta.mainProgram = "okra";
     duneVersion = "3";

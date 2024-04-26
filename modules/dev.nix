@@ -62,6 +62,7 @@
           end,
         })
       end
+      ${pkgs.ocamlPackages.okra.okra-vim-conf}
     '';
   };
 
