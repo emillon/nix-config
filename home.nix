@@ -14,6 +14,8 @@ in {
     homeConfigurations = {
       "${username}@delpech" =
         config [ common dev media x11 wayland ./machines/delpech.nix work ];
+      "${username}@LAPTOP-P2CLQ61L" =
+        config [ common dev media ./machines/delpech-wsl.nix work ];
       ${username} = config [ common dev ];
     };
   };
