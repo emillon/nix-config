@@ -30,6 +30,7 @@ in {
         { pattern = {"*.md"},
           callback = function ()
             vim.g.syntastic_markdown_checkers = {"okra"}
+            vim.g.syntastic_markdown_okra_args = "lint --short -e"
           end
         })
     end
