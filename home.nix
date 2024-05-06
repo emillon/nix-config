@@ -1,7 +1,7 @@
 { home-manager, pkgs }:
 let
   username = "etienne";
-  common = import ./modules/common.nix { inherit pkgs; };
+  common = import ./modules/common { inherit pkgs; };
   dev = import ./modules/dev { inherit pkgs; };
   x11 = import ./modules/x11.nix { inherit pkgs; };
   wayland = import ./modules/wayland.nix { inherit pkgs; };
