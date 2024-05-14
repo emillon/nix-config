@@ -90,4 +90,9 @@
   };
   home.sessionVariables.WLR_NO_HARDWARE_CURSORS = 1;
   targets.genericLinux.enable = true;
+  programs.zsh.shellAliases = let btHeadset = "28:11:A5:77:C9:F9";
+  in {
+    btconnect = "bluetoothctl connect ${btHeadset}";
+    btdisconnect = "bluetoothctl disconnect  ${btHeadset}";
+  };
 }
