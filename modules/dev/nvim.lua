@@ -9,3 +9,8 @@ if vim.fn.isdirectory(vim.g.merlindir) == 0 then
     end,
   })
 end
+require 'oil'.setup{
+    keymaps = {
+        ["<C-p>"] = false,
+    },
+}

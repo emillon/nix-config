@@ -22,6 +22,7 @@
       syntastic
       telescope-nvim
       catppuccin-nvim
+      oil-nvim
     ];
     extraConfig = builtins.readFile ./nvim.vim;
     extraLuaConfig = builtins.readFile ./nvim.lua
