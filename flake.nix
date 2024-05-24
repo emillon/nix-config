@@ -15,7 +15,7 @@
     };
   };
 
-  outputs = { flake-utils, home-manager, nixgl, nixpkgs, ... }:
+  outputs = { self, flake-utils, home-manager, nixgl, nixpkgs }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs {
@@ -28,10 +28,14 @@
           ];
         };
       in {
-        packages.homeConfigurations =
-          (import ./home.nix) { inherit home-manager pkgs; };
+        packages = {
+          homeConfigurations =
+            (import ./home.nix) { inherit home-manager pkgs; };
+          okra = pkgs.ocamlPackages.okra.okra-bin;
+          opam = pkgs.opam;
+        };
         devShells.okra = pkgs.mkShell {
-          nativeBuildInputs = [ pkgs.ocamlPackages.okra.okra-bin ];
+          nativeBuildInputs = [ self.packages.${system}.okra ];
           shellHook = "export ${pkgs.ocamlPackages.okra.okra-vim-env}=1";
         };
       });
