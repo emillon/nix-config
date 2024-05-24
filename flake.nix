@@ -27,7 +27,9 @@
             (import ./overlay/nixglize.nix)
           ];
         };
-      in (import ./home.nix) { inherit home-manager pkgs; } // {
+      in {
+        packages.homeConfigurations =
+          (import ./home.nix) { inherit home-manager pkgs; };
         devShells.okra = pkgs.mkShell {
           nativeBuildInputs = [ pkgs.ocamlPackages.okra.okra-bin ];
           shellHook = "export ${pkgs.ocamlPackages.okra.okra-vim-env}=1";
