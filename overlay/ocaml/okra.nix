@@ -1,11 +1,11 @@
 { pkgs }:
 let
-  version = "0.5.0";
+  version = "1.0.0";
   src = pkgs.fetchFromGitHub {
     owner = "tarides";
     repo = "okra";
     rev = version;
-    hash = "sha256-TVBkRACAQP7qfSPnoJRiayXoC+jloghi64nfWzheJdg=";
+    hash = "sha256-z/29tCRMInsLftjnn1DWSv/Fd88ibtyxNGWEdOeq1mU=";
   };
   okra-lib = pkgs.ocamlPackages.buildDunePackage {
     pname = "okra-lib";
@@ -15,6 +15,7 @@ let
     propagatedBuildInputs = with pkgs.ocamlPackages; [
       calendar
       csv
+      fpath
       get-activity-lib
       gitlab
       omd
