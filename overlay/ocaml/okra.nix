@@ -39,6 +39,7 @@ in {
   okra-bin = pkgs.ocamlPackages.buildDunePackage {
     meta.mainProgram = "okra";
     duneVersion = "3";
+    postPatch = "echo '(version ${version})' >> dune-project";
     inherit (okra-lib) version src;
     pname = "okra";
     propagatedBuildInputs = with pkgs.ocamlPackages; [
