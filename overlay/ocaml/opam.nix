@@ -85,11 +85,11 @@ pkgs.opam.overrideAttrs (old:
       };
     };
   in {
-    version = "2.2.0~rc1";
+    version = "2.2.0";
     src = pkgs.fetchurl {
       url =
-        "https://github.com/ocaml/opam/releases/download/2.2.0-rc1/opam-full-2.2.0-rc1.tar.gz";
-      hash = "sha256-aS6NPVX8DHzqOkgNlgJpyCHvNbO2xhfY6mOcCaJHmjI";
+        "https://github.com/ocaml/opam/releases/download/2.2.0/opam-full-2.2.0.tar.gz";
+      hash = "sha256-OTNPNq2+KAaDSHzyBLewZCCA/FlldH99b3zHuDzXoZI=";
     };
     patches = [ ];
 
