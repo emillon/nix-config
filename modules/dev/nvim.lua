@@ -14,3 +14,8 @@ require 'oil'.setup{
         ["<C-p>"] = false,
     },
 }
+require 'nvim-treesitter.configs'.setup {
+  highlight = {
+      enable = true,
+  }
+}

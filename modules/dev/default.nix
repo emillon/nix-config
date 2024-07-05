@@ -23,6 +23,7 @@
       telescope-nvim
       catppuccin-nvim
       oil-nvim
+      (nvim-treesitter.withPlugins (p: [ p.c p.ocaml ]))
     ];
     extraConfig = builtins.readFile ./nvim.vim;
     extraLuaConfig = builtins.readFile ./nvim.lua
