@@ -64,35 +64,39 @@
       };
     };
   };
-  services.kanshi.profiles = let
-    disabled = criteria: {
-      criteria = criteria;
-      status = "disable";
+  services.kanshi.profiles =
+    let
+      disabled = criteria: {
+        criteria = criteria;
+        status = "disable";
+      };
+    in
+    let
+      enabled = criteria: {
+        criteria = criteria;
+        status = "enable";
+      };
+    in
+    let laptop_screen = "AU Optronics 0xD291 Unknown";
+    in {
+      laptop = { outputs = [ (disabled laptop_screen) ]; };
+      home = {
+        outputs = [
+          (disabled laptop_screen)
+          (enabled "Dell Inc. DELL P2417H CJFH27C7217B")
+        ];
+      };
+      office = {
+        outputs =
+          [ (disabled laptop_screen) (enabled "AOC Q27P1B GNXK5HA066101") ];
+      };
     };
-  in let
-    enabled = criteria: {
-      criteria = criteria;
-      status = "enable";
-    };
-  in let laptop_screen = "AU Optronics 0xD291 Unknown";
-  in {
-    laptop = { outputs = [ (disabled laptop_screen) ]; };
-    home = {
-      outputs = [
-        (disabled laptop_screen)
-        (enabled "Dell Inc. DELL P2417H CJFH27C7217B")
-      ];
-    };
-    office = {
-      outputs =
-        [ (disabled laptop_screen) (enabled "AOC Q27P1B GNXK5HA066101") ];
-    };
-  };
   home.sessionVariables.WLR_NO_HARDWARE_CURSORS = 1;
   targets.genericLinux.enable = true;
-  programs.zsh.shellAliases = let btHeadset = "28:11:A5:77:C9:F9";
-  in {
-    btconnect = "bluetoothctl connect ${btHeadset}";
-    btdisconnect = "bluetoothctl disconnect  ${btHeadset}";
-  };
+  programs.zsh.shellAliases =
+    let btHeadset = "28:11:A5:77:C9:F9";
+    in {
+      btconnect = "bluetoothctl connect ${btHeadset}";
+      btdisconnect = "bluetoothctl disconnect  ${btHeadset}";
+    };
 }

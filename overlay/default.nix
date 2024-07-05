@@ -2,7 +2,8 @@ final: prev:
 let
   pkgs = prev;
   callPackage = pkgs.callPackage;
-in {
+in
+{
   ocamlPackages = prev.ocamlPackages // {
     get-activity-lib = callPackage ./ocaml/get-activity.nix { };
     gitlab = callPackage ./ocaml/gitlab.nix { };

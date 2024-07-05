@@ -9,7 +9,8 @@ let
   work = { programs.neovim.plugins = [ pkgs.ocamlPackages.okra.okra-vim ]; };
   config = modules:
     home-manager.lib.homeManagerConfiguration { inherit modules pkgs; };
-in {
+in
+{
   "${username}@delpech" =
     config [ common dev media x11 wayland ./machines/delpech.nix work ];
   "${username}@LAPTOP-P2CLQ61L" =

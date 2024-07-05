@@ -27,7 +27,9 @@
             (import ./overlay/nixglize.nix)
           ];
         };
-      in {
+      in
+      {
+        formatter = pkgs.nixpkgs-fmt;
         packages = {
           homeConfigurations =
             (import ./home.nix) { inherit home-manager pkgs; };

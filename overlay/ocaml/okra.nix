@@ -22,7 +22,8 @@ let
     ];
   };
   okra-vim-env = "OKRA_VIM";
-in {
+in
+{
   inherit okra-vim-env;
   okra-vim-conf = ''
     if vim.env.${okra-vim-env} ~= nil then
