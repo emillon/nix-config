@@ -1,11 +1,11 @@
 { pkgs }:
 let
-  version = "2.1.0";
+  version = "3.0.0";
   src = pkgs.fetchFromGitHub {
     owner = "tarides";
     repo = "okra";
     rev = version;
-    hash = "sha256-QHNxfZQspqnn0fxVlIBlX0Gh9Q6HQBgCZp+DO/LrH88=";
+    hash = "sha256-DFHmnoxHKeqng7osjKtou/kDoGsaA+tIEJgKmepry1Y=";
   };
   okra-lib = pkgs.ocamlPackages.buildDunePackage {
     pname = "okra-lib";
