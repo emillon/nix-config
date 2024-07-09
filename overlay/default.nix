@@ -10,5 +10,5 @@ in
     omd = callPackage ./ocaml/omd.nix { inherit pkgs; };
     okra = callPackage ./ocaml/okra.nix { };
   };
-  opam = callPackage ./ocaml/opam.nix { inherit pkgs; };
+  opam = (callPackage ./ocaml/opam.nix { inherit pkgs; }).usingDune;
 }
