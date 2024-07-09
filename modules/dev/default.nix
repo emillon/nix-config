@@ -1,5 +1,5 @@
 { pkgs }: {
-  home.packages = with pkgs; [ gh nixfmt ];
+  home.packages = with pkgs; [ gh ];
 
   programs.opam = {
     enable = true;
