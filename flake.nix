@@ -13,18 +13,24 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
+    ocaml = {
+      url = "github:nix-ocaml/nix-overlays";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
   };
 
-  outputs = { self, flake-utils, home-manager, nixgl, nixpkgs }:
+  outputs = { self, flake-utils, home-manager, nixgl, nixpkgs, ocaml }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs {
           inherit system;
           config.allowUnfree = true;
           overlays = [
-            (import ./overlay)
+            ocaml.overlays.default
             nixgl.overlay
             (import ./overlay/nixglize.nix)
+            (import ./overlay)
           ];
         };
       in
