@@ -1,8 +1,6 @@
 final: prev:
 let
-  pkgs = prev;
-  callPackage = pkgs.callPackage;
-  buildDunePackage = pkgs.ocamlPackages.buildDunePackage;
+  callPackage = prev.callPackage;
 in
 {
   ocamlPackages = prev.ocamlPackages // {
@@ -10,5 +8,4 @@ in
     gitlab = callPackage ./ocaml/gitlab.nix { };
     okra = callPackage ./ocaml/okra.nix { };
   };
-  opam = prev.callPackage ./ocaml/opam.nix { inherit buildDunePackage; };
 }
