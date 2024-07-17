@@ -27,6 +27,9 @@
         p.c
         p.ocaml
         p.ocaml-interface
+        p.markdown
+        p.markdown-inline
+        p.nix
       ]))
     ];
     extraConfig = builtins.readFile ./nvim.vim;
