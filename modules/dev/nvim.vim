@@ -1,8 +1,4 @@
 inoremap jk <esc>
-map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
-map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
-map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
-map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 let g:merlindir = trim(system('dirname $(command -v ocamlmerlin)')) . "/../share/merlin/vim"
 if isdirectory(g:merlindir)
 execute "set rtp+=" . g:merlindir
