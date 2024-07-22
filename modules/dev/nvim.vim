@@ -1,8 +1,3 @@
-let mapleader=","
-let maplocalleader=","
-nnoremap <silent> <C-p> <cmd>Telescope git_files<cr>
-nmap <LocalLeader>f :Neoformat<cr>
-colorscheme catppuccin
 inoremap jk <esc>
 map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
