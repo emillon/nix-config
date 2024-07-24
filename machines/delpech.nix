@@ -64,7 +64,7 @@
       };
     };
   };
-  services.kanshi.profiles =
+  services.kanshi.settings =
     let
       disabled = criteria: {
         criteria = criteria;
@@ -78,19 +78,25 @@
       };
     in
     let laptop_screen = "AU Optronics 0xD291 Unknown";
-    in {
-      laptop = { outputs = [ (disabled laptop_screen) ]; };
-      home = {
-        outputs = [
+    in
+    [
+      {
+        profile.name = "laptop";
+        profile.outputs = [ (disabled laptop_screen) ];
+      }
+      {
+        profile.name = "home";
+        profile.outputs = [
           (disabled laptop_screen)
           (enabled "Dell Inc. DELL P2417H CJFH27C7217B")
         ];
-      };
-      office = {
-        outputs =
+      }
+      {
+        profile.name = "office";
+        profile.outputs =
           [ (disabled laptop_screen) (enabled "AOC Q27P1B GNXK5HA066101") ];
-      };
-    };
+      }
+    ];
   home.sessionVariables.WLR_NO_HARDWARE_CURSORS = 1;
   targets.genericLinux.enable = true;
   programs.zsh.shellAliases =
