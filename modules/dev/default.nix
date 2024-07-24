@@ -59,6 +59,7 @@ in
         p.lua
         ts-cram.grammar
       ]))
+      gitsigns-nvim
     ];
     extraConfig = builtins.readFile ./nvim.vim;
     extraLuaConfig = builtins.readFile ./nvim.lua
