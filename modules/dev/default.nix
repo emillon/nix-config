@@ -1,52 +1,6 @@
 { pkgs }:
-let
-  ts-cram =
-    let
-      src = pkgs.fetchFromGitHub {
-        owner = "tjdevries";
-        repo = "tree-sitter-cram";
-        rev = "8cb450dfc5548b1aed2be5b3cd735c123b6fa6a8";
-        hash = "sha256-CcLbZyHNKLA7NoQ3SLWEBCh5Y/dmzcSGQjs6iCrCFVY=";
-      };
-    in
-    {
-      grammar = pkgs.tree-sitter.buildGrammar {
-        version = "0.0.1";
-        inherit src;
-        language = "cram";
-      };
-      highlights = builtins.readFile "${src}/queries/cram/highlights.scm";
-      injections = builtins.readFile "${src}/queries/cram/injections.scm";
-    };
-  ts-dune =
-    let
-      src = pkgs.fetchFromGitHub {
-        owner = "emillon";
-        repo = "tree-sitter-dune";
-        rev = "a601bd0e718000db8358c279534763d6fccf7bc5";
-        hash = "sha256-d75kpn//MZ2OZw9dElUCzeldBTwU7NIpMYGPvizz0oo=";
-      };
-    in
-    {
-      grammar = pkgs.tree-sitter.buildGrammar {
-        version = "n/a";
-        inherit src;
-        language = "dune";
-        generate = true;
-      };
-      highlights = builtins.readFile "${src}/queries/highlights.scm";
-      injections = builtins.readFile "${src}/queries/injections.scm";
-    };
-in
 {
   home.packages = with pkgs; [ gh ];
-
-  xdg.configFile = {
-    "nvim/queries/cram/highlights.scm".text = ts-cram.highlights;
-    "nvim/queries/cram/injections.scm".text = ts-cram.injections;
-    "nvim/queries/dune/highlights.scm".text = ts-dune.highlights;
-    "nvim/queries/dune/injections.scm".text = ts-dune.injections;
-  };
 
   programs.opam = {
     enable = true;
@@ -79,8 +33,8 @@ in
         p.nix
         p.lua
         p.javascript
-        ts-cram.grammar
-        ts-dune.grammar
+        p.cram
+        p.dune
       ]))
       gitsigns-nvim
     ];
