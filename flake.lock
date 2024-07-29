@@ -107,7 +107,9 @@
         "home-manager": "home-manager",
         "nixgl": "nixgl",
         "nixpkgs": "nixpkgs",
-        "ocaml": "ocaml"
+        "ocaml": "ocaml",
+        "tree-sitter-cram-src": "tree-sitter-cram-src",
+        "tree-sitter-dune-src": "tree-sitter-dune-src"
       }
     },
     "systems": {
@@ -122,6 +124,38 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "tree-sitter-cram-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1720532423,
+        "narHash": "sha256-CcLbZyHNKLA7NoQ3SLWEBCh5Y/dmzcSGQjs6iCrCFVY=",
+        "owner": "tjdevries",
+        "repo": "tree-sitter-cram",
+        "rev": "8cb450dfc5548b1aed2be5b3cd735c123b6fa6a8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tjdevries",
+        "repo": "tree-sitter-cram",
+        "type": "github"
+      }
+    },
+    "tree-sitter-dune-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1722005517,
+        "narHash": "sha256-U6anUTZyB/IQoUbCO+JeqWGaOSuh49VoWUO8tEscf+M=",
+        "owner": "emillon",
+        "repo": "tree-sitter-dune",
+        "rev": "8c00c2a0b69b9e68a206829ce3a5fa41f410433a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "emillon",
+        "repo": "tree-sitter-dune",
         "type": "github"
       }
     }
