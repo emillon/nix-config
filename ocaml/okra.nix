@@ -1,15 +1,12 @@
 { pkgs }:
 let
-  version = "3.1.0";
-  src = pkgs.fetchFromGitHub {
-    owner = "tarides";
-    repo = "okra";
-    rev = version;
-    hash = "sha256-AIrxYX5wL9W0CfOaMshntrAxksFO++Ts5eVAGrAfKeM=";
+  src = pkgs.fetchurl {
+    url = "https://github.com/tarides/opam-repository/raw/master/packages/okra/okra.3.1.0/okra-3.1.0.tbz";
+    hash = "sha256-5x/YkBCUR4Ffe9gfg/sImQ+e8DDj9D3938qT1rVFz6U=";
   };
   okra-lib = pkgs.ocamlPackages.buildDunePackage {
     pname = "okra-lib";
-    version = version;
+    version = "3.1.0";
     inherit src;
     duneVersion = "3";
     propagatedBuildInputs = with pkgs.ocamlPackages; [
@@ -40,7 +37,6 @@ in
   okra-bin = pkgs.ocamlPackages.buildDunePackage {
     meta.mainProgram = "okra";
     duneVersion = "3";
-    postPatch = "echo '(version ${version})' >> dune-project";
     inherit (okra-lib) version src;
     pname = "okra";
     propagatedBuildInputs = with pkgs.ocamlPackages; [
