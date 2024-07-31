@@ -146,11 +146,11 @@
     "tree-sitter-dune-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1722005517,
-        "narHash": "sha256-U6anUTZyB/IQoUbCO+JeqWGaOSuh49VoWUO8tEscf+M=",
+        "lastModified": 1722412103,
+        "narHash": "sha256-T3A9rcthTv3MgcM6GHFwCiKeFEAZ66XAnrV9zuGK/e4=",
         "owner": "emillon",
         "repo": "tree-sitter-dune",
-        "rev": "8c00c2a0b69b9e68a206829ce3a5fa41f410433a",
+        "rev": "3ebe42293d58591278bfb2afd5a7659353fef9ba",
         "type": "github"
       },
       "original": {
