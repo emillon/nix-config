@@ -16,7 +16,6 @@
     ocaml = {
       url = "github:nix-ocaml/nix-overlays";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
     };
     tree-sitter-cram-src = {
       url = "github:tjdevries/tree-sitter-cram";
