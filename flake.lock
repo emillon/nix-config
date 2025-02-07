@@ -76,33 +76,12 @@
         "type": "github"
       }
     },
-    "ocaml": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1738614747,
-        "narHash": "sha256-CQW5cPt5foYUkcVjDA9eYLFhmE7oL8qFP3DUAjur7bo=",
-        "owner": "nix-ocaml",
-        "repo": "nix-overlays",
-        "rev": "b1135cf2e37b33b2892dccc870a7f30dd4b2a073",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-ocaml",
-        "repo": "nix-overlays",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
         "nixgl": "nixgl",
         "nixpkgs": "nixpkgs",
-        "ocaml": "ocaml",
         "tree-sitter-cram-src": "tree-sitter-cram-src",
         "tree-sitter-dune-src": "tree-sitter-dune-src"
       }

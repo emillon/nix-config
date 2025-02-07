@@ -13,10 +13,6 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
-    ocaml = {
-      url = "github:nix-ocaml/nix-overlays";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     tree-sitter-cram-src = {
       url = "github:tjdevries/tree-sitter-cram";
       flake = false;
@@ -33,7 +29,6 @@
     , home-manager
     , nixgl
     , nixpkgs
-    , ocaml
     , tree-sitter-cram-src
     , tree-sitter-dune-src
     }:
@@ -43,7 +38,6 @@
         inherit system;
         config.allowUnfree = true;
         overlays = [
-          ocaml.overlays.default
           nixgl.overlay
           (import ./overlay/nixglize.nix)
           (
