@@ -6,13 +6,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-utils.url = "github:numtide/flake-utils";
-    nixgl = {
-      url = "github:nix-community/nixGL";
-      inputs = {
-        flake-utils.follows = "flake-utils";
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
     tree-sitter-cram-src = {
       url = "github:tjdevries/tree-sitter-cram";
       flake = false;
@@ -27,7 +20,6 @@
     { self
     , flake-utils
     , home-manager
-    , nixgl
     , nixpkgs
     , tree-sitter-cram-src
     , tree-sitter-dune-src
@@ -38,8 +30,6 @@
         inherit system;
         config.allowUnfree = true;
         overlays = [
-          nixgl.overlay
-          (import ./overlay/nixglize.nix)
           (
             final: prev:
               let
