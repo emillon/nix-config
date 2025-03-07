@@ -35,6 +35,7 @@
         p.javascript
         p.cram
         p.dune
+        p.query
       ]))
       gitsigns-nvim
     ];
