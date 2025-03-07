@@ -1,7 +1,10 @@
 vim.g.mapleader = ','
 vim.g.maplocalleader = ','
 
-vim.filetype.add({extension = { t = 'cram' }})
+vim.filetype.add({extension = {
+    t = 'cram',
+    mld = 'mld',
+}})
 
 vim.api.nvim_set_keymap('n', '<C-p>', '<cmd>Telescope git_files<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<LocalLeader>f', ':Neoformat<cr>', {})

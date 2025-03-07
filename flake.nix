@@ -14,6 +14,10 @@
       url = "github:emillon/tree-sitter-dune";
       flake = false;
     };
+    tree-sitter-mld-src = {
+      url = "github:emillon/tree-sitter-mld";
+      flake = false;
+    };
   };
 
   outputs =
@@ -23,6 +27,7 @@
     , nixpkgs
     , tree-sitter-cram-src
     , tree-sitter-dune-src
+    , tree-sitter-mld-src
     }:
     flake-utils.lib.eachDefaultSystem (system:
     let
@@ -41,6 +46,10 @@
                     cram.src = tree-sitter-cram-src;
                     dune = {
                       src = tree-sitter-dune-src;
+                      generate = true;
+                    };
+                    mld = {
+                      src = tree-sitter-mld-src;
                       generate = true;
                     };
                   };

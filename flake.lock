@@ -59,7 +59,8 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "tree-sitter-cram-src": "tree-sitter-cram-src",
-        "tree-sitter-dune-src": "tree-sitter-dune-src"
+        "tree-sitter-dune-src": "tree-sitter-dune-src",
+        "tree-sitter-mld-src": "tree-sitter-mld-src"
       }
     },
     "systems": {
@@ -106,6 +107,22 @@
       "original": {
         "owner": "emillon",
         "repo": "tree-sitter-dune",
+        "type": "github"
+      }
+    },
+    "tree-sitter-mld-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1741369677,
+        "narHash": "sha256-yUJChuSoVBTBT6RuAQV4RwibRv6wEzpx5o+tNcLGn2A=",
+        "owner": "emillon",
+        "repo": "tree-sitter-mld",
+        "rev": "6abeaa26a867aa913ce76fe60f3affc4eaff699b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "emillon",
+        "repo": "tree-sitter-mld",
         "type": "github"
       }
     }
