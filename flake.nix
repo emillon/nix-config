@@ -56,7 +56,7 @@
                 };
                 ocamlPackages = prev.ocamlPackages // {
                   get-activity-lib = callPackage ./ocaml/get-activity.nix { };
-                  gitlab = callPackage ./ocaml/gitlab.nix { };
+                  omd = callPackage ./ocaml/omd.nix { };
                   okra = callPackage ./ocaml/okra.nix { };
                 };
               }
