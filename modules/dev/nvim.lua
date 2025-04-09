@@ -37,3 +37,12 @@ require 'nvim-treesitter.configs'.setup {
   }
 }
 require 'gitsigns'.setup()
+
+vim.g.neoformat_mld_ocamlformat = {
+    exe = 'ocamlformat',
+    no_append = 1,
+    stdin = 1,
+    args= {'--name', '"%:p"', '-'},
+}
+
+vim.g.neoformat_enabled_mld = {'ocamlformat'}
