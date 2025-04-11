@@ -37,6 +37,8 @@
         p.dune
         p.query
         p.mld
+        p.html
+        p.latex
       ]))
       gitsigns-nvim
     ];
