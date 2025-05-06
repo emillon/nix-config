@@ -79,7 +79,7 @@
       ":e" = "vim";
       ":q" = "exit";
     };
-    initExtra = builtins.readFile ./init.zsh;
+    initContent = pkgs.lib.mkOrder 1000 (builtins.readFile ./init.zsh);
   };
 
   programs.direnv = {
