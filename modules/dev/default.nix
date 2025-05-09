@@ -1,4 +1,5 @@
 { pkgs }:
+let lib = pkgs.lib; in
 {
   imports = [
     ./git.nix
@@ -24,4 +25,8 @@
 
   programs.eza.enable = true;
   programs.bat.enable = true;
+
+  programs.zsh.initContent = lib.mkOrder 1000 ''
+    export LS_COLORS=$(${lib.getExe pkgs.vivid} generate catppuccin-mocha)
+  '';
 }
