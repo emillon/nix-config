@@ -4,6 +4,7 @@ vim.g.maplocalleader = ','
 vim.filetype.add({extension = {
     t = 'cram',
     mld = 'mld',
+    mly = 'menhir',
 }})
 
 vim.api.nvim_set_keymap('n', '<C-p>', '<cmd>Telescope git_files<cr>', { noremap = true, silent = true })

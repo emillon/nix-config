@@ -31,6 +31,7 @@
         p.mld
         p.html
         p.latex
+        p.menhir
       ]))
       gitsigns-nvim
     ];
