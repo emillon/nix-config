@@ -5,7 +5,7 @@ let
   dev = import ./modules/dev { inherit pkgs; };
   x11 = import ./modules/x11.nix { inherit pkgs; };
   wayland = import ./modules/wayland.nix { inherit pkgs; };
-  media = { home.packages = with pkgs; [ yt-dlp ]; };
+  media = { home.packages = with pkgs; [ pirate-get yt-dlp ]; };
   work = { programs.neovim.plugins = [ pkgs.ocamlPackages.okra.okra-vim ]; };
   config = modules:
     home-manager.lib.homeManagerConfiguration { inherit modules pkgs; };
