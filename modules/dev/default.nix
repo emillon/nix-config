@@ -15,7 +15,6 @@ let lib = pkgs.lib; in
     enableZshIntegration = false;
   };
 
-
   programs.tmux.enable = true;
 
   programs.direnv = {
@@ -23,7 +22,11 @@ let lib = pkgs.lib; in
     nix-direnv.enable = true;
   };
 
-  programs.eza.enable = true;
+  programs.eza = {
+    enable = true;
+    enableZshIntegration = true;
+    icons = "auto";
+  };
   programs.bat.enable = true;
 
   programs.zsh.initContent = lib.mkOrder 1000 ''
