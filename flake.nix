@@ -54,11 +54,6 @@
                     };
                   };
                 };
-                ocamlPackages = prev.ocamlPackages // {
-                  get-activity-lib = callPackage ./ocaml/get-activity.nix { };
-                  omd = callPackage ./ocaml/omd.nix { };
-                  okra = callPackage ./ocaml/okra.nix { };
-                };
               }
           )
         ];
@@ -69,12 +64,6 @@
       packages = {
         homeConfigurations =
           (import ./home.nix) { inherit home-manager pkgs; };
-        okra = pkgs.ocamlPackages.okra.okra-bin;
-        opam = pkgs.opam;
-      };
-      devShells.okra = pkgs.mkShell {
-        nativeBuildInputs = [ self.packages.${system}.okra ];
-        shellHook = "export ${pkgs.ocamlPackages.okra.okra-vim-env}=1";
       };
     });
 }

@@ -36,7 +36,6 @@
       gitsigns-nvim
     ];
     extraConfig = builtins.readFile ./nvim.vim;
-    extraLuaConfig = builtins.readFile ./nvim.lua
-      + pkgs.ocamlPackages.okra.okra-vim-conf;
+    extraLuaConfig = builtins.readFile ./nvim.lua;
   };
 }
