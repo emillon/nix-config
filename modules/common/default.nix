@@ -1,8 +1,9 @@
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
 {
   home.stateVersion = "22.11";
-  home.username = "etienne";
+  home.username = lib.mkDefault "etienne";
   home.homeDirectory =
-    if pkgs.stdenv.isDarwin then "/Users/etienne" else "/home/etienne";
+    let username = config.home.username; in
+    if pkgs.stdenv.isDarwin then "/Users/${username}" else "/home/${username}";
   programs.home-manager.enable = true;
 }
