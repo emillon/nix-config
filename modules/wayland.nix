@@ -1,4 +1,4 @@
-{ pkgs }: {
+{ lib, pkgs, ... }: {
   home.packages = with pkgs; [ foot ];
   wayland.windowManager.sway = {
     enable = true;
@@ -6,7 +6,7 @@
     config.focus.wrapping = "yes";
     config.keybindings =
       let mod = "Mod4"; # XXX
-      in pkgs.lib.mkOptionDefault {
+      in lib.mkOptionDefault {
         "${mod}+Shift+Return" = "exec ${pkgs.foot}/bin/foot";
         "${mod}+Shift+c" = "kill";
         "${mod}+q" = "reload";
