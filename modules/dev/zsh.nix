@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 {
   programs.zsh = {
     enable = true;
@@ -12,6 +12,16 @@
       ":e" = "vim";
       ":q" = "exit";
     };
-    initContent = lib.mkOrder 1000 (builtins.readFile ./init.zsh);
+    initContent =
+      let
+        initZsh = lib.mkOrder 1000 (builtins.readFile ./init.zsh);
+        # Workaround for https://github.com/NixOS/nix/issues/3616
+        macFix = lib.mkAfter (
+          lib.optionalString pkgs.stdenv.isDarwin ''
+            [[ ! $(command -v nix) && -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]] && source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+          ''
+        );
+      in
+      lib.mkMerge [ initZsh macFix ];
   };
 }
