@@ -65,5 +65,10 @@
         homeConfigurations =
           (import ./home.nix) { inherit home-manager pkgs; };
       };
+      devShells.default = pkgs.mkShell {
+        buildInputs = [
+          pkgs.just
+        ];
+      };
     });
 }
