@@ -1,18 +1,28 @@
 { home-manager, pkgs }:
 let
   username = "etienne";
-  common = import ./modules/common { inherit pkgs; };
-  dev = import ./modules/dev { inherit pkgs; };
-  x11 = import ./modules/x11.nix { inherit pkgs; };
-  wayland = import ./modules/wayland.nix { inherit pkgs; };
-  media = { home.packages = with pkgs; [ pirate-get yt-dlp ]; };
   config = modules:
     home-manager.lib.homeManagerConfiguration { inherit modules pkgs; };
 in
 {
   "${username}@delpech" =
-    config [ common dev media x11 wayland ./machines/delpech.nix ];
+    config [
+      ./modules/common
+      ./modules/dev
+      ./modules/media.nix
+      ./modules/x11.nix
+      ./modules/wayland.nix
+      ./machines/delpech.nix
+    ];
   "${username}@LAPTOP-P2CLQ61L" =
-    config [ common dev media ./machines/delpech-wsl.nix ];
-  ${username} = config [ common dev ];
+    config [
+      ./modules/common
+      ./modules/dev
+      ./modules/media.nix
+      ./machines/delpech-wsl.nix
+    ];
+  ${username} = config [
+    ./modules/common
+    ./modules/dev
+  ];
 }
