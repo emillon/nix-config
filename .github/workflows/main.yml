@@ -21,7 +21,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Install Nix
-        uses: DeterminateSystems/nix-installer-action@v1
+        uses: DeterminateSystems/nix-installer-action@v20
+        with:
+          determinate: true
       - run: mkdir -p ~/.local/state/nix/profiles
       - name: Build HM environment
         run: nix run home-manager/release-23.05 -- build --flake .#${{ matrix.setup.target }}
