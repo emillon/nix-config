@@ -18,7 +18,7 @@ vim.api.nvim_set_keymap('n', '<Leader>et', ':tab Oil<cr>', {})
 
 if vim.fn.isdirectory(vim.g.merlindir) == 0 then
   if vim.fn.executable('ocamllsp') == 1 then
-    require'lspconfig'.ocamllsp.setup{}
+    vim.lsp.enable('ocamllsp')
   end
   vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -48,7 +48,7 @@ vim.g.neoformat_mld_ocamlformat = {
 
 vim.g.neoformat_enabled_mld = {'ocamlformat'}
 
-require('lspconfig').ruff.setup({})
+vim.lsp.enable('ruff')
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("lsp", { clear = true }),
   callback = function(args)
