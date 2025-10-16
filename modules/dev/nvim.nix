@@ -16,23 +16,19 @@
       telescope-nvim
       catppuccin-nvim
       oil-nvim
-      (nvim-treesitter.withPlugins (p: [
-        p.c
-        p.ocaml
-        p.ocaml-interface
-        p.markdown
-        p.markdown-inline
-        p.nix
-        p.lua
-        p.javascript
-        p.cram
-        p.dune
-        p.query
-        p.mld
-        p.html
-        p.latex
-        p.menhir
-      ]))
+      (nvim-treesitter.withPlugins (p:
+        [
+          p.c
+          p.markdown
+          p.markdown-inline
+          p.nix
+          p.lua
+          p.javascript
+          p.query
+          p.html
+          p.latex
+        ]
+      ))
       gitsigns-nvim
     ];
     extraConfig = builtins.readFile ./nvim.vim;

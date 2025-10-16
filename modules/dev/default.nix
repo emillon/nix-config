@@ -8,12 +8,6 @@
 
   home.packages = with pkgs; [ gh ];
 
-  programs.opam = {
-    enable = true;
-    enableBashIntegration = false;
-    enableZshIntegration = false;
-  };
-
   programs.tmux.enable = true;
 
   programs.direnv = {
