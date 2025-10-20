@@ -2,9 +2,9 @@
 {
   programs.git = {
     enable = true;
-    userEmail = lib.mkDefault "me@emillon.org";
-    userName = "Etienne Millon";
-    extraConfig = {
+    settings = {
+      user.email = lib.mkDefault "me@emillon.org";
+      user.name = "Etienne Millon";
       url = {
         "git@github.com:".pushInsteadOf = "https://github.com/";
         "git@gist.github.com:".pushInsteadOf = "https://gist.github.com/";
