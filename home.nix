@@ -11,9 +11,7 @@ in
       ./modules/dev
       ./modules/media.nix
       ./modules/x11.nix
-      ./modules/wayland.nix
       ./machines/delpech.nix
-      ./modules/ocaml
     ];
   "${username}@LAPTOP-P2CLQ61L" =
     config [
