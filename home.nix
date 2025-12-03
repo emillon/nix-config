@@ -11,6 +11,7 @@ in
       ./modules/dev
       ./modules/media.nix
       ./modules/x11.nix
+      ./modules/ocaml
       ./machines/delpech.nix
     ];
   "${username}@LAPTOP-P2CLQ61L" =
