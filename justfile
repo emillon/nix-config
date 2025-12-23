@@ -9,3 +9,7 @@ switch:
 # update lockfile
 update:
     nix flake update
+
+# run formatter
+fmt:
+    nix fmt .
