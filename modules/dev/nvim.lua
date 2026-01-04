@@ -15,11 +15,6 @@ require 'oil'.setup{
         ["<C-p>"] = false,
     },
 }
-require 'nvim-treesitter.configs'.setup {
-  highlight = {
-      enable = true,
-  }
-}
 require 'gitsigns'.setup()
 
 vim.lsp.enable('ruff')
