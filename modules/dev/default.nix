@@ -5,6 +5,7 @@
     ./nvim.nix
     ./zsh.nix
     ./homebrew.nix
+    ./secretive.nix
   ];
 
   home.packages = with pkgs; [ gh ];
