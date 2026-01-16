@@ -4,6 +4,7 @@
     ./git.nix
     ./nvim.nix
     ./zsh.nix
+    ./homebrew.nix
   ];
 
   home.packages = with pkgs; [ gh ];
