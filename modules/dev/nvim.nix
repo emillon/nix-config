@@ -32,6 +32,6 @@
       gitsigns-nvim
     ];
     extraConfig = builtins.readFile ./nvim.vim;
-    extraLuaConfig = builtins.readFile ./nvim.lua;
+    initLua = builtins.readFile ./nvim.lua;
   };
 }

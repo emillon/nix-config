@@ -46,7 +46,7 @@ in
     ] ++ map pkgs.neovimUtils.grammarToPlugin [ cramGrammar duneGrammar mldGrammar ]
     ;
     extraConfig = builtins.readFile ./nvim.vim;
-    extraLuaConfig = builtins.readFile ./nvim.lua;
+    initLua = builtins.readFile ./nvim.lua;
   };
 
   programs.opam = {
