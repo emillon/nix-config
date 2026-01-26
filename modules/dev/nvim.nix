@@ -14,6 +14,7 @@
       nerdcommenter
       syntastic
       telescope-nvim
+      plenary-nvim
       catppuccin-nvim
       oil-nvim
       (nvim-treesitter.withPlugins (p:
