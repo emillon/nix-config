@@ -7,8 +7,8 @@
     plugins = with pkgs.vimPlugins; [
       molokai
       vim-nix
-      fugitive
-      rhubarb
+      vim-fugitive
+      vim-rhubarb
       neoformat
       nvim-lspconfig
       nerdcommenter
