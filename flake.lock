@@ -1,5 +1,28 @@
 {
   "nodes": {
+    "ffmpeg-concat": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1749556410,
+        "narHash": "sha256-RvCn8S40hvU9QDxsvYEPU6eckcLUJNt3pgVeC3Hx+RY=",
+        "owner": "emillon",
+        "repo": "ffmpeg-concat",
+        "rev": "2bcc3cb5d53d841655f0e1bc169e2c36b76e9ff9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "emillon",
+        "repo": "ffmpeg-concat",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -55,6 +78,7 @@
     },
     "root": {
       "inputs": {
+        "ffmpeg-concat": "ffmpeg-concat",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
