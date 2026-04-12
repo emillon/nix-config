@@ -6,4 +6,5 @@
     let username = config.home.username; in
     if pkgs.stdenv.isDarwin then "/Users/${username}" else "/home/${username}";
   programs.home-manager.enable = true;
+  programs.nh.enable = true;
 }
