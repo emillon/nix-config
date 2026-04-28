@@ -8,7 +8,13 @@
     ./secretive.nix
   ];
 
-  home.packages = with pkgs; [ gh ];
+  programs.gh = {
+    enable = true;
+    settings = {
+      telemetry = "disabled";
+      aliases.my = "pr list --author @me";
+    };
+  };
 
   programs.tmux.enable = true;
 
