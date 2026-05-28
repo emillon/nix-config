@@ -1,28 +1,14 @@
 { home-manager, pkgs }:
 let
   username = "etienne";
-  config = modules:
-    home-manager.lib.homeManagerConfiguration { inherit modules pkgs; };
+  config = module:
+    home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      modules = [ module ];
+    };
 in
 {
-  "${username}@delpech" =
-    config [
-      ./modules/common
-      ./modules/dev
-      ./modules/media.nix
-      ./modules/x11.nix
-      ./modules/ocaml
-      ./machines/delpech.nix
-    ];
-  "${username}@LAPTOP-P2CLQ61L" =
-    config [
-      ./modules/common
-      ./modules/dev
-      ./modules/media.nix
-      ./machines/delpech-wsl.nix
-    ];
-  ${username} = config [
-    ./modules/common
-    ./modules/dev
-  ];
+  "${username}@delpech" = config ./machines/delpech.nix;
+  "${username}@LAPTOP-P2CLQ61L" = config ./machines/delpech-wsl.nix;
+  ${username} = config ./machines/generic.nix;
 }

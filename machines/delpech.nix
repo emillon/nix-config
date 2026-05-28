@@ -1,4 +1,11 @@
 {
+  imports = [
+    ../modules/common
+    ../modules/dev
+    ../modules/media.nix
+    ../modules/x11.nix
+    ../modules/ocaml
+  ];
   programs.autorandr = {
     enable = true;
     profiles = {
