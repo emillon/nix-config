@@ -91,11 +91,6 @@
           (enabled "Dell Inc. DELL P2417H CJFH27C7217B")
         ];
       }
-      {
-        profile.name = "office";
-        profile.outputs =
-          [ (disabled laptop_screen) (enabled "AOC Q27P1B GNXK5HA066101") ];
-      }
     ];
   home.sessionVariables.WLR_NO_HARDWARE_CURSORS = 1;
   targets.genericLinux.enable = true;
