@@ -1,6 +1,6 @@
 {
   imports = [
-    ./modules/common
-    ./modules/dev
+    ../modules/common
+    ../modules/dev
   ];
 }
