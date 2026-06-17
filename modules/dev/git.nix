@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 {
   programs.git = {
     enable = true;
@@ -18,4 +18,8 @@
       init.defaultBranch = "main";
     };
   };
+  home.packages = with pkgs;
+    [
+      tig
+    ];
 }
