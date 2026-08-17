@@ -4,7 +4,7 @@
   home.username = lib.mkDefault "etienne";
   home.homeDirectory =
     let username = config.home.username; in
-    if pkgs.stdenv.isDarwin then "/Users/${username}" else "/home/${username}";
+    if pkgs.stdenv.hostPlatform.isDarwin then "/Users/${username}" else "/home/${username}";
   programs.home-manager.enable = true;
   programs.nh.enable = true;
 }
