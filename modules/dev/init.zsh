@@ -5,6 +5,11 @@ mdcd ()
   mkdir -p "$1"
   cd "$1"
 }
+nohist ()
+{
+  unset HISTFILE
+  typeset -g NOHIST_PROMPT='%F{red}[nohist]%f '
+}
 alias -s -- pdf=zathura
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
@@ -40,5 +45,5 @@ zstyle ':vcs_info:*' actionformats ' [%b%u%c]'
 precmd () { vcs_info }
 setopt prompt_subst
 promptcolor=${host_color:-cyan}
-PROMPT='%F{$promptcolor} %~$vcs_info_msg_0_ %# %f'
+PROMPT='${NOHIST_PROMPT}%F{$promptcolor} %~$vcs_info_msg_0_ %# %f'
 RPROMPT=""
