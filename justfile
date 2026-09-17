@@ -13,3 +13,7 @@ update:
 # run formatter
 fmt:
     nix fmt .
+
+# install the prek git hook
+setup-prek:
+    prek install
