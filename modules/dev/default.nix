@@ -6,6 +6,7 @@
     ./zsh.nix
     ./homebrew.nix
     ./secretive.nix
+    ./bat.nix
   ];
 
   programs.gh = {
@@ -28,7 +29,6 @@
     enableZshIntegration = true;
     icons = "auto";
   };
-  programs.bat.enable = true;
 
   programs.zsh.initContent = lib.mkOrder 1000 ''
     export LS_COLORS=$(${lib.getExe pkgs.vivid} generate catppuccin-mocha)
