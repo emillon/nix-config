@@ -1,21 +1,14 @@
 { lib, pkgs, ... }:
 {
   imports = [
-    ./git.nix
-    ./nvim.nix
-    ./zsh.nix
-    ./homebrew.nix
-    ./secretive.nix
     ./bat.nix
+    ./gh.nix
+    ./git.nix
+    ./homebrew.nix
+    ./nvim.nix
+    ./secretive.nix
+    ./zsh.nix
   ];
-
-  programs.gh = {
-    enable = true;
-    settings = {
-      telemetry = "disabled";
-      aliases.my = "pr list --author @me";
-    };
-  };
 
   programs.tmux.enable = true;
 
