@@ -1,4 +1,4 @@
-{ fetchFromGitHub, writeShellApplication }:
+{ fetchFromGitHub, ffmpeg, python3, writeShellApplication }:
 
 let
   src = fetchFromGitHub {
@@ -10,7 +10,8 @@ let
 in
 writeShellApplication {
   name = "ffmpeg-concat";
+  runtimeInputs = [ ffmpeg python3 ];
   text = ''
-    python3 ${src}/ffmpeg-concat "$@"
+    exec python3 ${src}/ffmpeg-concat "$@"
   '';
 }
