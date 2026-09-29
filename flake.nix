@@ -14,25 +14,27 @@
     , home-manager
     , nixpkgs
     }:
-    flake-utils.lib.eachDefaultSystem (system:
     let
-      pkgs = import nixpkgs {
+      pkgsFor = system: import nixpkgs {
         inherit system;
         overlays = [ (import ./overlay.nix) ];
         config.allowUnfree = true;
       };
     in
-    {
-      formatter = pkgs.nixpkgs-fmt;
-      packages = {
-        homeConfigurations =
-          (import ./home.nix) { inherit home-manager pkgs; };
-      };
-      devShells.default = pkgs.mkShell {
-        buildInputs = [
-          pkgs.just
-          pkgs.prek
-        ];
-      };
-    });
+    flake-utils.lib.eachDefaultSystem
+      (system:
+      let pkgs = pkgsFor system; in
+      {
+        formatter = pkgs.nixpkgs-fmt;
+        devShells.default = pkgs.mkShell {
+          buildInputs = [
+            pkgs.just
+            pkgs.prek
+          ];
+        };
+      })
+    // {
+      homeConfigurations =
+        (import ./home.nix) { inherit home-manager pkgsFor; };
+    };
 }
