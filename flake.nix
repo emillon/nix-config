@@ -6,16 +6,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-utils.url = "github:numtide/flake-utils";
-    ffmpeg-concat = {
-      url = "github:emillon/ffmpeg-concat";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-    };
   };
 
   outputs =
     { self
-    , ffmpeg-concat
     , flake-utils
     , home-manager
     , nixpkgs
@@ -24,7 +18,7 @@
     let
       pkgs = import nixpkgs {
         inherit system;
-        overlays = [ (import ./overlay.nix { inherit ffmpeg-concat; }) ];
+        overlays = [ (import ./overlay.nix) ];
         config.allowUnfree = true;
       };
     in
