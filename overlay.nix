@@ -1,5 +1,8 @@
 final: prev:
+let
+  inherit (prev) callPackage;
+in
 {
-  ytdl-nfo = (import ./packages/ytdl-nfo.nix) { pkgs = prev; };
-  ffmpeg-concat = prev.callPackage ./packages/ffmpeg-concat.nix { };
+  ytdl-nfo = callPackage ./packages/ytdl-nfo.nix { };
+  ffmpeg-concat = callPackage ./packages/ffmpeg-concat.nix { };
 }
