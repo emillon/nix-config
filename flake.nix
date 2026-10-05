@@ -34,6 +34,11 @@
         };
       })
     // {
+      homeManagerModules = {
+        common = import ./modules/common;
+        dev = import ./modules/dev;
+      };
+
       homeConfigurations =
         (import ./home.nix) { inherit home-manager pkgsFor; };
     };
